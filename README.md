@@ -38,40 +38,38 @@ $ docker-compose build --no-cache
 $ docker-compose up
 ```
 
-The application will start at [http://localhost:8080](http://localhost:8080)
+The application will start at http://localhost:8080
 
-Swagger Documentation at [http://localhost:8080/doc](http://localhost:8080/doc)
+Swagger Documentation at http://localhost:8080/doc
 
-## Installation
+## Authentication ###
 
-```bash
-$ npm install
+To get authenticated you'll have to create a user at http://localhost:8080/users
+
+Method: POST
+
+Body:
+```
+{
+  "email": "youremail",
+  "password": "yourpassword",
+  "name": "Optional"
+}
 ```
 
-## Running the app
+### Jwt Token ###
 
-```bash
-# development
-$ npm run start
+URI: http://localhost:8080/auth/login
 
-# watch mode
-$ npm run start:dev
+Method: POST
 
-# production mode
-$ npm run start:prod
+Body:
+
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+{
+  "email": "youremail",
+  "password": "yourpassword"
+}
 ```
 
 ## Support
