@@ -6,6 +6,7 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiBadRequestResponse,
@@ -16,6 +17,7 @@ import {
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { isObjectIdOrHexString } from 'mongoose';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { ContactsExceptions } from './contacts.exceptions';
 import { ContactsService } from './contacts.service';
 import {
@@ -27,6 +29,7 @@ import {
 @ApiForbiddenResponse({ description: 'Forbidden. ' })
 @ApiBadRequestResponse({ description: 'Bad Request.' })
 @ApiUnauthorizedResponse({ description: 'Unauthorized.' })
+@UseGuards(JwtAuthGuard)
 @ApiTags('contacts')
 @Controller('contacts')
 export class ContactsController {
