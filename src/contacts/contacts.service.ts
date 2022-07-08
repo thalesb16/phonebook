@@ -7,7 +7,7 @@ import {
   CreateContactDTO,
   UpdateContactDTO,
 } from './dto/contact.dto';
-import { Contact, ContactDocument } from './entity/contact.entity';
+import { Contact, ContactDocument } from './entities/contact.entity';
 
 @Injectable()
 export class ContactsService {
