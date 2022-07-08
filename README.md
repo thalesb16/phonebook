@@ -26,6 +26,22 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Running with Docker
+
+First make sure you have docker and docker-compose installed, then
+
+```bash
+# build
+$ docker-compose build --no-cache
+
+# up
+$ docker-compose up
+```
+
+The application will start at [http://localhost:8080](http://localhost:8080)
+
+Swagger Documentation at [http://localhost:8080/doc](http://localhost:8080/doc)
+
 ## Installation
 
 ```bash
