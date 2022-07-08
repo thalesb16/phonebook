@@ -1,0 +1,24 @@
+app: phonebook
+service: phonebook
+
+plugins:
+  - 'serverless-plugin-typescript'
+  - serverless-plugin-optimize
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+functions:
+  app:
+    handler: src/lambda.handler
+    events:
+      - http:
+          method: any
+          path: /
+          cors: true
+      - http:
+          method: any
+          path: /{any+}
+          cors: true
